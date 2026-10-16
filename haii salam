@@ -1,0 +1,26 @@
+def hallo(nama):
+    print("keren banget", nama)
+    print("selamat datang di dunia pemrograman")
+    print("semangat belajar ya", nama)
+hallo("alfi")
+hallo("narji")
+#membandingkan dua integer
+def maks (a, b):
+    if a > b:
+        return a
+    else:
+        return b
+print("takut ya dek")
+#membandingkan dua integer
+def min (a, b):
+    if a <= b:
+        print("minimum adalah", a)
+    else:
+        print("minimum adalah", b)
+min (70,60)
+#nilai nilai universitas ngawi
+def nilai_mahasiswa_ngawi(nama, nilai):
+    print("mahasiswa", nama)
+    print("nilai mahasiswa adalah",nama, nilai)
+nilai_mahasiswa_ngawi("alfi", 50)
+nilai_mahasiswa_ngawi("narji",70)
