@@ -1,0 +1,29 @@
+import random
+
+angka_rahasia = random.randint(1, 100)
+kesempatan = 7
+
+print("=== Selamat Datang di Game Tebak Angka ===")
+print("Saya telah memilih angka antara 1 sampai 100.")
+print(f"Kamu memiliki {kesempatan} kali kesempatan untuk menebak.\n")
+
+while kesempatan > 0:
+  try:
+    tebakan = int(input("Masukkan tebakanmu: "))
+  except ValueError:
+    print("Harap masukkan angka yang valid!\n")
+    continue
+
+  if tebakan < angka_rahasia:
+    print("Angka terlalu kecil! Coba lagi.\n")
+    kesempatan -= 1
+  elif tebakan > angka_rahasia:
+    print("Angka terlalu besar! Coba lagi.\n")
+    kesempatan -= 1
+  else:
+    print(f"Selamat! Tebakanmu benar. Angkanya adalah {angka_rahasia}.")
+    break
+
+  print(f"Sisa kesempatan: {kesempatan}\n")
+  if kesempatan == 0:
+    print(f"Kesempatan habis! Angka rahasianya adalah {angka_rahasia}.")
