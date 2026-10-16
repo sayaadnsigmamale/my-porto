@@ -1,0 +1,21 @@
+import numpy as np
+
+np.random.seed(42)
+x = np.arange(1, 11, dtype=np.float64)
+y = 40 + 5.5 * x + np.random.normal(0, 2.5, size=10)
+
+x_latih, y_latih = x[:8], y[:8]
+x_tes, y_tes = x[8:], y[8:]
+
+w, b, lr = 0.0, 0.0, 0.01
+literasi = 0
+while literasi < 1000:
+    error = (w * x_latih + b) - y_latih
+    w -= lr * (2 / 8) * np.dot(error, x_latih)
+    b -= lr * (2 / 8) * np.sum(error)
+    literasi += 1
+
+prediksi = w * x_tes + b
+print(f"nilai = {w:.2f} * jam + {b:.2f}")
+print(f"error tes: {np.mean(np.abs(prediksi - y_tes)):.2f}")
+print(f"belajar 6 jam -> {w * 6 + b:.1f}")
